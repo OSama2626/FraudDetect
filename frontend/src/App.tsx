@@ -1,18 +1,14 @@
-import { Button } from './components/ui/button'
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react'
 
-function App() {
-
+export default function App() {
   return (
-    <>
-      
-      <h1 className='text-red-500'>Vite + React</h1>
-      <h2 className="text-blue-600 font-bold text-2xl mt-4">
-  Tailwind fonctionne !
-  <Button className="ml-4">Cliquez-moi</Button>
-</h2>
-
-    </>
+    <header>
+      <SignedOut>
+        <SignInButton />
+      </SignedOut>
+      <SignedIn>
+        <UserButton />
+      </SignedIn>
+    </header>
   )
 }
-
-export default App
